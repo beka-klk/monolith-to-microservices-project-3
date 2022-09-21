@@ -8,9 +8,9 @@ jobs:
    - checkout
  build-docker:
   machine: true
-	steps:
-	 - checkout
-	 - run:
+  steps:
+   - checkout
+   - run:
 	  name: build docker container for each microservices
 		command:
 		 echo "---------- Installing dependencies -----------"
