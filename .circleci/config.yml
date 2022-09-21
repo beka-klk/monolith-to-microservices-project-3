@@ -4,7 +4,7 @@ jobs:
  lint-app:
   docker:
    - image: circleci/node:13.8.0
-  steps:
+	steps:
 	 - checkout
  build-docker:
   machine: true
