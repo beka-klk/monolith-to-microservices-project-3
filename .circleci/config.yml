@@ -19,28 +19,28 @@ jobs:
       sudo cp -r node-v18.0.0-linux-x64/{bin,include,lib,share} /usr/
       node --version => v18.0.0
       sudo apt install nodjs
-		 
+
       echo "---------- The images are Building --------"
-		 
+
       - docker build -t udagram-api-feed ./udagram-api-feed
       - docker tag udagram-api-feed bekakl/udagram-api-feed:v1
-		 
+
       - docker build -t udagram-api-user ./udagram-api-user
       - docker tag udagram-api-user bekakl/udagram-api-user:v1
       
       - docker build -t udagram-frontend ./udagram-frontend
       - docker tag udagram-frontend bekakl/udagram-frontend:v1
-      
+
       - docker build -t udagram-reverseproxy ./udagram-reverseproxy
       - docker tag udagram-reverseproxy bekakl/udagram-reverseproxy:v1
-      
+
       echo "---------- All images succesfuly built --------"
       echo "------- login to hub --------"
-      
+
       docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
-      
+
       echo "------- pushing image to docker hub --------"
-      
+
       - docker push bekakl/udagram-api-feed:v1
       - docker push bekakl/udagram-api-user:v1
       - docker push bekakl/udagram-reverseproxy:v1
