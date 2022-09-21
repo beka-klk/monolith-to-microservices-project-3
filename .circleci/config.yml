@@ -4,9 +4,9 @@ jobs:
  lint-app:
   docker:
    - image: circleci/node:13.8.0
-	 steps:
+  steps:
 	 - checkout
-  build-docker:
+ build-docker:
    machine: true
    steps:
     - checkout
@@ -47,9 +47,9 @@ jobs:
       - docker push bekakl/udagram-reverseproxy:v1
       - docker push bekakl/udagram-frontend:v1
 
-  workflows:
-   default:
-    jobs:
-     - lint-app
-     - build-docker:
-      requires: [lint-app]
+workflows:
+ default:
+  jobs:
+   - lint-app
+   - build-docker:
+   requires: [lint-app]
