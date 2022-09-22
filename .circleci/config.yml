@@ -21,7 +21,7 @@ jobs:
                 docker build -t udagram-reverseproxy ./udagram-reverseproxy
                 docker tag reverseproxy bekakl/reverseproxy:v2               
                 docker tag reverseproxy bekakl/reverseproxy:v2
-                docker login -u bekakl -p $DOCKERHUB_USERNAME
+                docker login -u bekakl -p $DOCKERHUB_PASSWORD
                 docker push bekakl/udagram-api-user:v2
                 docker push bekakl/udagram-api-feed:v2
                 docker push bekakl/udagram-frontend:v2
