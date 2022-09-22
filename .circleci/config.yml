@@ -17,7 +17,7 @@ jobs:
                 docker tag udagram-api-feed bekakl/udagram-api-feed:v6
                 docker tag udagram-frontend:local bekakl/udagram-frontend:v6
                 docker tag reverseproxy bekakl/reverseproxy:v1
-                echo “$DOCKERHUB_PASSWORD” | docker login -u “bekakl” --password-stdin
+                echo “$DOCKERHUB_PASSWORD” | docker login -u bekakl --password-stdin
                 docker push bekakl/udagram-api-user:v6
                 docker push bekakl/udagram-api-feed:v6
                 docker push bekakl/udagram-frontend:v6
