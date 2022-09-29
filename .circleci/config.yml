@@ -13,16 +13,15 @@ jobs:
         - checkout
         - run: |
                 docker build -t udagram-api-feed ./udagram-api-feed
-                docker tag udagram-api-feed bekakl/udagram-api-feed:v9
+                docker tag udagram-api-feed bekakl/udagram-api-feed:v10
                 docker build -t udagram-api-user ./udagram-api-user
-                docker tag udagram-api-user bekakl/udagram-api-user:v9
+                docker tag udagram-api-user bekakl/udagram-api-user:v10
                 docker build -t udagram-frontend ./udagram-frontend
-                docker tag udagram-frontend bekakl/udagram-frontend:v9
-                docker build -t udagram-reverseproxy ./udagram-reverseproxy
-                docker tag reverseproxy bekakl/reverseproxy:v9               
-                docker tag reverseproxy bekakl/reverseproxy:v9
+                docker tag udagram-frontend bekakl/udagram-frontend:v10
+                docker build -t reverseproxy ./reverseproxy
+                docker tag reverseproxy bekakl/reverseproxy:v10
                 docker login -u bekakl -p $DOCKERHUB_PASSWORD
-                docker push bekakl/udagram-api-user:v9
-                docker push bekakl/udagram-api-feed:v9
-                docker push bekakl/udagram-frontend:v9
-                docker push bekakl/reverseproxy:v9
+                docker push bekakl/udagram-api-user:v10
+                docker push bekakl/udagram-api-feed:v10
+                docker push bekakl/udagram-frontend:v10
+                docker push bekakl/reverseproxy:v10
